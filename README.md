@@ -1,5 +1,5 @@
 ### Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif) This is Pradeep Rajasekar (as) Ajish
-## Vision AI Engineer @ [PIC](https://www.pic.net.tw/)
+## Vision AI Engineer at [President Information Corp.](https://www.pic.net.tw/), Taiwan
 
 * 🌍 New Taipei City, Taiwan, Planet Earth
 * ✉️ Reach Me @ [ajishpradeep](https://www.linkedin.com/in/ajishpradeep/)
