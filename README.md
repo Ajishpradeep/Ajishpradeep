@@ -1,9 +1,12 @@
-### Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif) This is Pradeep Rajasekar (AKA) Ajish
+### Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif) This is Pradeep Rajasekar (as) Ajish
+## Vision AI Engineer @ [PIC](https://www.pic.net.tw/)
 
-* 🌍 Taiwan, Planet Earth
+* 🌍 New Taipei City, Taiwan, Planet Earth
 * ✉️ Reach Me @ [ajishpradeep](https://www.linkedin.com/in/ajishpradeep/)
 * 🔭 Computer Vision - DeepLearning - AI - Research
-* 💬 Ask me about : Anything That Tech, Coffee, Anime
+* 🔭 I’m currently working on Vision pipeline implementation with Deepstream SDK and TAO toolkit 
+* 🌱 I’m currently learning Edge AI implemetation
+* * 💬 Ask me about : Anything That Tech, Coffee, Anime
   
 ## Deep Learning | Computer Vision | Researcher
 ## Skills
