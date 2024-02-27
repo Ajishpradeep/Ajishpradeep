@@ -4,8 +4,8 @@
 * 🌍 New Taipei City, Taiwan, Planet Earth
 * ✉️ Reach Me @ [ajishpradeep](https://www.linkedin.com/in/ajishpradeep/)
 * 🔭 Computer Vision - DeepLearning - AI - Research
-* 🔭 I’m currently working on Vision pipeline implementation with Deepstream SDK and TAO toolkit 
-* 🌱 I’m currently learning Edge AI implemetation
+* 🔭 Currently working on Vision pipeline implementation with Deepstream SDK and TAO toolkit 
+* 🌱 Currently learning Edge AI implemetation
 * * 💬 Ask me about : Anything That Tech, Coffee, Anime
   
 ## Deep Learning | Computer Vision | Researcher
