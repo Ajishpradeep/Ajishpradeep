@@ -6,7 +6,7 @@
 * 🔭 Computer Vision - DeepLearning - AI - Research
 * 🔭 Currently working on Vision pipeline implementation with Deepstream SDK and TAO toolkit 
 * 🌱 Currently learning Edge AI implemetation
-* * 💬 Ask me about : Anything That Tech, Coffee, Anime
+* 💬 Ask me about : Anything That Tech, Coffee, Anime
   
 ## Deep Learning | Computer Vision | Researcher
 ## Skills
