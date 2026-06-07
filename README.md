@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://github.com/DenverCoder1/readme-typing-svg">
-  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=28&pause=1200&color=00BFFF&center=true&vCenter=true&width=380&height=50&lines=Hey+this+is+Ajish" alt="Hey this is Ajish" />
+  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=28&pause=1200&color=00BFFF&center=true&vCenter=true&width=380&height=50&lines=Hey+this+is+Ajish" alt="Hey...!!! This is Ajish" />
 </a>
 
 </div>
