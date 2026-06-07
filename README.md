@@ -20,13 +20,13 @@
           <b>Pradeep Rajasekar</b> (Ajish) · New Taipei City, Taiwan
         </p>
         <p>
-          I am an AI research engineer with <b>4+ years</b> of experience spanning <b>computer vision</b>, <b>large language models</b>, <b>agentic workflows</b>, and <b>multi-modal</b> systems. I build from first principles—<b>linear algebra</b>, <b>probabilistic modeling</b>, and <b>geometric vision</b>—so models remain interpretable and transfer cleanly when the product or domain shifts.
+          I am an AI research engineer with <b>4+ years</b> of experience spanning <b>computer vision <b>and <b>multi-modal</b> systems. I build from first principles—<b>linear algebra</b>, <b>probabilistic modeling</b>, and <b>geometric vision</b>—so models remain interpretable and transfer cleanly when the product or domain shifts.
         </p>
         <p>
-          My track record is <b>research through deployment</b>: production-grade biomechanical AI (markerless motion, <b>CoreML</b> on Apple silicon, <b>NVIDIA TensorRT</b> / DeepStream / TAO, <b>GCP Vertex AI</b> / Document AI), agentic coaching grounded in domain data, and retail vision at national scale. I lead cross-functional R&amp;D, define <b>AI-assisted engineering standards</b> (Cursor rules, skills, hooks), and mentor teams from architecture selection to release.
+          My track record is <b>research through deployment</b>: production-grade biomechanical AI - </b> markerless motion, </b> pose estimation<b> Bio mechanically contstriant 3D reconstrction <b>  agentic coaching grounded in domain data, and retail automation vision model development for edge at national scale project. </b> Experinced in CoreML</b> on Apple silicon, <b>NVIDIA TensorRT</b> , I lead cross-functional R&amp;D, define <b> AI-assisted engineering standards</b> (harness rules, skills, hooks), and mentor teams from architecture selection to release.
         </p>
         <p>
-          <i>Open to</i> applied AI, edge inference, and research-to-production partnerships that demand both rigor and shipping discipline.
+          <i>Open to</i> Research, Algorithem Engineering in core AI, edge inference, and research-to-production partnerships that demand both rigor and shipping discipline.
         </p>
         <h3>Selected impact</h3>
         <ul>
