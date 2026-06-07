@@ -51,14 +51,56 @@
       </div>
     </td>
     <td width="42%" valign="top">
-      <div align="center">
-        <h3>Tech stack</h3>
-        <p><b>AI &amp; data</b></p>
-        <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,numpy,pandas&perline=6" alt="Python, PyTorch, TensorFlow, NumPy, Pandas" />
-        <p><b>Web &amp; tools</b></p>
-        <img src="https://skillicons.dev/icons?i=js,html,css,bash,git,github&perline=6" alt="JavaScript, HTML, CSS, Bash, Git, GitHub" />
-        <p><b>Platforms &amp; deployment</b></p>
-        <img src="https://skillicons.dev/icons?i=gcp,docker,nvidia,linux&perline=6" alt="GCP, Docker, NVIDIA, Linux" />
+      <div align="left">
+        <h3>Core competencies</h3>
+        <p>
+          <b>Mathematical foundations</b><br />
+          Linear Algebra, Calculus, Probabilistic Modeling, Multi-View Geometry, Temporal Modeling, Geometric Vision, Optimization Theory
+        </p>
+        <p>
+          <b>Deep learning &amp; models</b><br />
+          Transformers, Diffusion Models, GANs, Attention Mechanisms, Contrastive Learning, Vector Embeddings, KAN, Conditional Image Generation
+        </p>
+        <p>
+          <b>Computer vision</b><br />
+          2D/3D Pose Estimation, Object Detection (YOLO, DETR), 3D Reconstruction, Gaussian Splatting, Kinematic Analysis, Biomechanics, Human-Object Interaction
+        </p>
+        <p>
+          <b>LLM &amp; agentic AI</b><br />
+          LLM Fine-Tuning, Domain-Specific Model Training, Agentic Workflows, API Integration (Claude, Gemini), Named Entity Recognition, Prompt Engineering, RAG Pipelines
+        </p>
+        <p>
+          <b>Deployment &amp; infrastructure</b><br />
+          TensorRT, Apple CoreML, Edge AI (Apple ARM), NVIDIA DeepStream SDK, NVIDIA TAO Toolkit, Cloud-Native Microservices, GCP Vertex AI
+        </p>
+        <p>
+          <b>Languages &amp; frameworks</b><br />
+          Python, JavaScript, PyTorch, TensorFlow, HuggingFace Transformers
+        </p>
+        <p>
+          <b>Leadership &amp; research</b><br />
+          Technical Proposal Writing, Conference Submissions, Research Team Mentorship, AI Coding Standards &amp; Tooling, Cross-Functional Collaboration
+        </p>
+        <p><b>Tools &amp; platforms</b></p>
+        <p>
+          <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+          <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" />
+          <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch" />
+          <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="TensorFlow" />
+          <img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="Hugging Face" />
+          <br />
+          <img src="https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Google Cloud" />
+          <img src="https://img.shields.io/badge/Vertex%20AI-1a73e8?style=flat-square&logo=googlecloud&logoColor=white" alt="Vertex AI" />
+          <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
+          <img src="https://img.shields.io/badge/NVIDIA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="NVIDIA" />
+          <img src="https://img.shields.io/badge/CoreML-111?style=flat-square&logo=apple&logoColor=white" alt="Apple CoreML" />
+          <br />
+          <img src="https://img.shields.io/badge/NVIDIA%20edge%20%26%20infer-TensorRT%20%C2%B7%20DeepStream%20%C2%B7%20TAO%20%C2%B7%20Metropolis-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="TensorRT, DeepStream, TAO, Metropolis" />
+          <br />
+          <img src="https://img.shields.io/badge/Anthropic%20(Claude)-D4A574?style=flat-square&logo=anthropic&logoColor=white" alt="Anthropic Claude" />
+          <img src="https://img.shields.io/badge/Google%20Gemini-8E75B2?style=flat-square&logo=googlegemini&logoColor=white" alt="Google Gemini" />
+          <img src="https://img.shields.io/badge/Cursor-16161e?style=flat-square&logo=cursor&logoColor=white" alt="Cursor" />
+        </p>
         <h3>Experience</h3>
         <p>
           <b>AI Research Engineer</b><br />
