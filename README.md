@@ -143,3 +143,5 @@
 </div>
 
 ---
+<!-- docs-sync e2e test 2026-08-23 - safe to revert -->
+
