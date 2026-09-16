@@ -49,12 +49,14 @@ Three of six things I now build against, each learned from a specific failure wr
 
 ## Lab
 
-Independent builds. Most share one habit: a deterministic path that works with no model at all.
+Independent builds, most recent first. The habit they share: the model proposes, a deterministic layer decides, and nothing sensitive leaves the machine.
 
-- [**CarbonPass**](https://github.com/Ajishpradeep/CarbonPass) — a local vision-language model turns a factory's photographed paperwork into EU CBAM carbon accounting, with MILP production scheduling. On-premise; documents never leave the building.
-- [**Magic Shuffle**](https://github.com/Ajishpradeep/Magic-Shuffle) — a song picker that reads energy, sleep, stress, weather and calendar, chooses a track and explains why. Spotify verifies every track the model names; a deterministic path needs no API key at all.
-- [**data_automation_pipeline**](https://github.com/Ajishpradeep/data_automation_pipeline) — PDFs, web pages and source files into clean Markdown for LLM consumption, LaTeX and code blocks preserved; parallelised, optional OCR.
-- [**Pulse**](https://github.com/Ajishpradeep/pulse) — a shared 3D world on a projector at a live event: attendees scan a code, appear as characters, and their facial emotion drives the room. Emotion is computed on the phone; only the label crosses the network. Built in a day.
+- [**biomech-emcee**](https://github.com/Ajishpradeep/biomech-emcee) — a 3D movement-review workspace that a person and an AI agent operate together. The browser exposes its live state — current frame, selected anatomy, measurements, notes — through 13 WebMCP tools, so an agent reads and drives the same review the human is looking at instead of guessing from pixels. Baseball pitching is the reference workflow; live app and demo video in the repo.
+- [**CarbonPass**](https://github.com/Ajishpradeep/CarbonPass) — a small factory photographs its bills, invoices and production log; a local vision-language model turns them into product carbon on the EU CBAM template, a material-loss map, a grid-aware production schedule (MILP) and an anonymised peer comparison. Runs on-premise; documents never leave the building.
+- [**Magic-Shuffle**](https://github.com/Ajishpradeep/Magic-Shuffle) — a song picker that reads how you are doing (energy, sleep, stress), the weather and what your calendar says is next, then chooses a track and explains why. Spotify verifies every track the model names; without any API key a deterministic path makes the same kind of pick.
+- **Action_Analyzer** *(private)* — upload a photo or short video of any action; a local vision-language model works out what it is and how eco-friendly it is, and a deterministic scorer turns that into a reward. Open-set, so nothing to pick from a list; fully local; the model never has the final say on the number.
+- [**pulse**](https://github.com/Ajishpradeep/pulse) — a shared 3D world on a projector at a live event: attendees scan a code, appear as characters, and their facial emotion drives their character and the room's mood. Emotion is computed on the phone; only the label crosses the network. Built in a day.
+- [**LLM-on-Business-card**](https://github.com/Ajishpradeep/LLM-on-Business-card) — photographs of business cards become structured records (Gemini), embedded into ChromaDB so the collection answers questions in plain language — "AI engineers in Taipei" — rather than exact-match lookups.
 
 ## Now
 
