@@ -1,145 +1,65 @@
-<div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Ajishpradeep/Ajishpradeep/main/figure-dark.svg">
+  <img alt="AI works because mathematics does. A cloud of points resolves into a golfer at address, triangulated by two cameras, then dissolves again." src="https://raw.githubusercontent.com/Ajishpradeep/Ajishpradeep/main/figure-light.svg" width="100%">
+</picture>
 
-<a href="https://github.com/DenverCoder1/readme-typing-svg">
-  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=28&pause=1200&color=00BFFF&center=true&vCenter=true&width=380&height=50&lines=Hey...!!!+This+is+Ajish" alt="Hey...!!! This is Ajish" />
-</a>
+I engineer AI where the mathematics is explicit and the physics is enforced. It may be an LLM, a vision or multimodal system, generative or predictive — the domain changes, the mathematics does not.
 
-</div>
+*A metric that cannot see a fault will certify it. Those are the failures I build against.*
+
+**[ajishpradeep.com](https://ajishpradeep.com)** — the work, with its figures drawn live &nbsp;·&nbsp; **[CV](https://ajishpradeep.com/cv/)** &nbsp;·&nbsp; [LinkedIn](https://linkedin.com/in/ajishpradeep) &nbsp;·&nbsp; [ajishpradeep@gmail.com](mailto:ajishpradeep@gmail.com)
 
 <br>
 
-<table>
-  <tr>
-    <td width="58%" valign="top">
-      <div align="left">
-        <p>
-          <img src="https://avatars.githubusercontent.com/u/41766091?s=96&v=4" alt="Pradeep Rajasekar GitHub avatar" width="72" height="72" />
-        </p>
-        <h3>AI Research Engineer</h3>
-        <p>
-          <b>Pradeep Rajasekar</b> (Ajish) · New Taipei City, Taiwan
-        </p>
-        <p>
-          I am an AI research engineer with <b>4+ years</b> of experience spanning <b>computer vision <b>and <b>multi-modal</b> systems. I build from first principles—<b>linear algebra</b>, <b>probabilistic modeling</b>, and <b>geometric vision</b>—so models remain interpretable and transfer cleanly when the product or domain shifts.
-        </p>
-        <p>
-          My track record is <b>research through deployment</b>: production-grade biomechanical AI - </b> markerless motion, </b> pose estimation<b> Bio mechanically contstriant 3D reconstrction <b>  agentic coaching grounded in domain data, and retail automation vision model development for edge at national scale project. </b> Experinced in CoreML</b> on Apple silicon, <b>NVIDIA TensorRT</b> , I lead cross-functional R&amp;D, define <b> AI-assisted engineering standards</b> (harness rules, skills, hooks), and mentor teams from architecture selection to release.
-        </p>
-        <p>
-          <i>Open to</i> Research, Algorithem Engineering in core AI, edge inference, and research-to-production partnerships that demand both rigor and shipping discipline.
-        </p>
-        <h3>Selected impact</h3>
-        <ul>
-          <li><b>XView AI (IdeasLab)</b> — 2D→3D pose lifting for the first markerless app with real-time full golf swing on-device: <b>60% accuracy gain</b> (per-joint error <b>8 cm → 3 cm</b>); multi-view + temporal lifting for <b>~30% better 3D fidelity</b> under occlusion and fast motion.</li>
-          <li><b>Research → production</b> — Productionized <b>VGGT</b>, <b>TCPFormer</b>, <b>FreeMo</b>, and <b>Gaussian splatting</b>; <b>~30% gain</b> in motion-understanding stack for biomechanical validity and temporal coherence.</li>
-          <li><b>Agentic AI &amp; culture</b> — Agentic LLM coaching with domain-tuned models and <b>Claude</b> / <b>Gemini</b> integrations; org-wide <b>Cursor</b> agent rules, skills, and hooks for AI-assisted development.</li>
-          <li><b>Edge &amp; cloud inference</b> — <b>CoreML</b> on Apple silicon (<b>240 fps</b> markerless tracking, no cloud); <b>TensorRT</b>, DeepStream, TAO, and <b>GCP</b> (Vertex AI, Document AI) in production paths.</li>
-          <li><b>President Information Corp</b> — <b>GTC 2025</b> poster <i>“Scalable Vision AI for Planogram Compliance”</i> (YOLO + embeddings, training-free catalog updates); unmanned <b>7-Eleven X8</b> vision pipeline (<b>30%</b> gain); Metropolis microservices; <b>LLM-assisted NER</b>; analytics on <b>5M+</b> records with <b>95%</b> confidence intervals.</li>
-          <li><b>Recognition</b> — <b>TAITRA “Go Healthy Taiwan”</b> technical lead (<b>638</b> proposals, <b>55</b> countries); lead engineer, <b>Taiwan Expo Europe</b> (Poland, June 2026). Event planning manager, International Student Association @ NTUT (2022–2023).</li>
-          <li><b>Research</b> — M.Sc. thesis: GAN inpainting with contextual + content–spatial attention (NTUT). Independent: <b>KAN</b> for efficient LLM inference. <a href="https://github.com/Ajishpradeep/Case_Study"><b>Case_Study</b></a> — transformers, triplet embeddings, VQA / ViT depth, Vertex AI.</li>
-          <li><b>Portfolio</b> — <a href="https://ajish.online">ajish.online</a></li>
-        </ul>
-      </div>
-      <div align="center">
-        <h3>Connect</h3>
-        <p>
-          <a href="https://www.linkedin.com/in/ajishpradeep"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-          <a href="https://github.com/Ajishpradeep"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
-          <a href="https://ajish.online"><img src="https://img.shields.io/badge/Portfolio-111827?style=for-the-badge&logo=googlechrome&logoColor=D4374D" alt="Portfolio website" /></a>
-          <a href="mailto:ajishpradeep@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
-        </p>
-      </div>
-    </td>
-    <td width="42%" valign="top">
-      <div align="left">
-        <h3>Core competencies</h3>
-        <p>
-          <b>Mathematical foundations</b><br />
-          Linear Algebra, Calculus, Probabilistic Modeling, Multi-View Geometry, Temporal Modeling, Geometric Vision, Optimization Theory
-        </p>
-        <p>
-          <b>Deep learning &amp; models</b><br />
-          Transformers, Diffusion Models, GANs, Attention Mechanisms, Contrastive Learning, Vector Embeddings, KAN, Conditional Image Generation
-        </p>
-        <p>
-          <b>Computer vision</b><br />
-          2D/3D Pose Estimation, Object Detection (YOLO, DETR), 3D Reconstruction, Gaussian Splatting, Kinematic Analysis, Biomechanics, Human-Object Interaction
-        </p>
-        <p>
-          <b>LLM &amp; agentic AI</b><br />
-          LLM Fine-Tuning, Domain-Specific Model Training, Agentic Workflows, API Integration (Claude, Gemini), Named Entity Recognition, Prompt Engineering, RAG Pipelines
-        </p>
-        <p>
-          <b>Deployment &amp; infrastructure</b><br />
-          TensorRT, Apple CoreML, Edge AI (Apple ARM), NVIDIA DeepStream SDK, NVIDIA TAO Toolkit, Cloud-Native Microservices, GCP Vertex AI
-        </p>
-        <p>
-          <b>Languages &amp; frameworks</b><br />
-          Python, JavaScript, PyTorch, TensorFlow, HuggingFace Transformers
-        </p>
-        <p>
-          <b>Leadership &amp; research</b><br />
-          Technical Proposal Writing, Conference Submissions, Research Team Mentorship, AI Coding Standards &amp; Tooling, Cross-Functional Collaboration
-        </p>
-        <p><b>Tools &amp; platforms</b></p>
-        <p>
-          <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
-          <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" />
-          <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch" />
-          <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="TensorFlow" />
-          <img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="Hugging Face" />
-          <br />
-          <img src="https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Google Cloud" />
-          <img src="https://img.shields.io/badge/Vertex%20AI-1a73e8?style=flat-square&logo=googlecloud&logoColor=white" alt="Vertex AI" />
-          <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
-          <img src="https://img.shields.io/badge/NVIDIA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="NVIDIA" />
-          <img src="https://img.shields.io/badge/CoreML-111?style=flat-square&logo=apple&logoColor=white" alt="Apple CoreML" />
-          <br />
-          <img src="https://img.shields.io/badge/NVIDIA%20edge%20%26%20infer-TensorRT%20%C2%B7%20DeepStream%20%C2%B7%20TAO%20%C2%B7%20Metropolis-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="TensorRT, DeepStream, TAO, Metropolis" />
-          <br />
-          <img src="https://img.shields.io/badge/Anthropic%20(Claude)-D4A574?style=flat-square&logo=anthropic&logoColor=white" alt="Anthropic Claude" />
-          <img src="https://img.shields.io/badge/Google%20Gemini-8E75B2?style=flat-square&logo=googlegemini&logoColor=white" alt="Google Gemini" />
-          <img src="https://img.shields.io/badge/Cursor-16161e?style=flat-square&logo=cursor&logoColor=white" alt="Cursor" />
-        </p>
-        <h3>Experience</h3>
-        <p>
-          <b>AI Research Engineer</b><br />
-          IdeasLab Formosa, Taipei<br />
-          <i>May 2025 – Present</i><br />
-          <small>XView AI: pose lifting, SOTA integration, agentic LLMs, CoreML edge, benchmarks, proposals &amp; standards.</small>
-        </p>
-        <p>
-          <b>AI Engineer</b><br />
-          President Information Corp (統一資訊), Taipei<br />
-          <i>Nov 2023 – Feb 2025</i><br />
-          <small>Planogram / retail vision, NVIDIA Metropolis + TAO + DeepStream + TensorRT, GCP NER &amp; analytics.</small>
-        </p>
-        <p>
-          <b>Software Developer</b><br />
-          AIBS Software Solutions, Coimbatore<br />
-          <i>May 2017 – Aug 2021</i><br />
-          <small>Enterprise ERP (Tally), inventory &amp; tax tracking, full-stack delivery; cleared ~95% of historical software discrepancies.</small>
-        </p>
-        <h3>Education</h3>
-        <p>
-          <b>M.Sc. Electrical Engineering &amp; Computer Science</b> (GPA 3.8/4.0)<br />
-          <i>National Taipei University of Technology</i> · 2021 – 2023
-        </p>
-        <p>
-          <b>B.Sc. Information Technology</b> (GPA 7.9/10)<br />
-          <i>Sri Ramakrishna Mission Vidyalaya College, Coimbatore</i> · 2011 – 2014
-        </p>
-      </div>
-    </td>
-  </tr>
-</table>
+## Three bodies of work
 
-<br />
+**Motion — markerless 3D biomechanics on a phone.** IdeasLab Formosa, 2025 – present.
+Two consumer cameras, a 29-keypoint pose model, multi-view reconstruction anchored to real scale, and a coaching layer in which the language model is never allowed to do the maths. Mean per-joint 3D error 8 cm → 3 cm; the full pipeline on Apple silicon via Core ML with no footage leaving the handset, in an app used by PGA Tour professionals.
+Case files: [the pose model and the fine-tune that quietly corrupted it](https://ajishpradeep.com/work/markerless-3d-motion/) · [the geometry underneath everything](https://ajishpradeep.com/work/reconstruction-infrastructure/) · [an LLM that is never allowed to do the maths](https://ajishpradeep.com/work/agentic-coaching-llm/)
 
-<div align="center">
-  <a href="https://github.com/DenverCoder1/github-readme-streak-stats">
-    <img src="https://streak-stats.demolab.com?user=Ajishpradeep&theme=tokyonight&hide_border=true&mode=daily&card_width=500" alt="GitHub contribution streak" />
-  </a>
-</div>
+**Retail — open-set recognition at 7,000+ stores.** President Information Corp, 2023 – 2025.
+Dense detection says where a product is; a fine-tuned metric space says which one it is — so a new SKU costs vectors instead of a retraining run. Deployed across 7,000+ 7-ELEVEN stores in Taiwan; presented as an NVIDIA GTC 2025 technical poster.
+Case file: [retail vision AI that scales without retraining](https://ajishpradeep.com/work/planogram-vision-ai/)
 
----
+**Foundations — attention, generative modelling, function approximation.**
+MSc thesis on a GAN with contextual and spatial attention for inpainting in the low-data regime (NTUT, 3.8/4.0). A mathematical walkthrough of the Transformer that carries one worked example from tokenisation to the decoder's masked attention. Kolmogorov–Arnold layers as a cheaper substitute for dense MLP blocks at inference — exploratory, no language-model results yet.
+[Thesis case file](https://ajishpradeep.com/work/inpainting-thesis/) · [Case_Study](https://github.com/Ajishpradeep/Case_Study) · [kan_experiment](https://github.com/Ajishpradeep/kan_experiment)
+
+## On the record
+
+Every line below is corroborated by someone other than me.
+
+| | | |
+|---|---|---|
+| 2025 | **Winner, TAITRA "Go Healthy with Taiwan"** — 1 of 3 from 638 proposals across 55 countries. Sole author of the winning technical proposal. | [finals coverage](https://newshub.medianet.com.au/2025/12/top-innovators-compete-in-taipei-as-go-healthy-with-taiwan-finals-spotlight-health-tech-advances/133652/) |
+| 2025 | **Scalable Vision AI for Planogram Compliance** — NVIDIA GTC 2025 technical poster, selected by technical review. | |
+| 2025 | **XView AI shipped** — markerless swing analysis running entirely on the phone. The 2D-to-3D lifting and the Core ML deployment are my work. | [App Store](https://apps.apple.com/us/app/xview-ai-golf-swing-analysis/id1616121788) |
+| 2025 | **7,000+ stores** — the planogram-compliance system in *Scientific Reports* (Ou et al.). The detection-and-embedding architecture is mine; the paper is theirs. | [PubMed](https://pubmed.ncbi.nlm.nih.gov/41402356/) |
+| 2026 | **Taiwan Expo Europe, Warsaw** — presented the motion-analysis work under the Taiwan Excellence banner. | [exhibitor listing](https://www.taiwanexpoeurope.com.tw/en/exhibitor/5655073AE4F501E7DDB9B191CD6B48F0/info.html) |
+
+## Field notes
+
+Three of six things I now build against, each learned from a specific failure written up in the case files.
+
+- **A metric blind to the failure is not a metric.** A model once scored better while getting worse — the validation set only contained poses where the bias was correct.
+- **Make the regression impossible, not unlikely.** Freezing a pathway so its output is bit-identical by construction is a guarantee. A penalty term is a hope with a coefficient.
+- **Deterministic where it can be.** Where a confident wrong number causes harm, Python computes and the model narrates. That is a design decision, not a limitation.
+
+[All six, with the case files they came from →](https://ajishpradeep.com/#notes)
+
+## Lab
+
+Independent builds. Most share one habit: a deterministic path that works with no model at all.
+
+- [**CarbonPass**](https://github.com/Ajishpradeep/CarbonPass) — a local vision-language model turns a factory's photographed paperwork into EU CBAM carbon accounting, with MILP production scheduling. On-premise; documents never leave the building.
+- [**Magic Shuffle**](https://github.com/Ajishpradeep/Magic-Shuffle) — a song picker that reads energy, sleep, stress, weather and calendar, chooses a track and explains why. Spotify verifies every track the model names; a deterministic path needs no API key at all.
+- [**data_automation_pipeline**](https://github.com/Ajishpradeep/data_automation_pipeline) — PDFs, web pages and source files into clean Markdown for LLM consumption, LaTeX and code blocks preserved; parallelised, optional OCR.
+- [**Pulse**](https://github.com/Ajishpradeep/pulse) — a shared 3D world on a projector at a live event: attendees scan a code, appear as characters, and their facial emotion drives the room. Emotion is computed on the phone; only the label crosses the network. Built in a day.
+
+## Now
+
+AI Research Engineer at IdeasLab Formosa, New Taipei City. Working on the pose-lifting stack, the coaching LLM, and the engineering team's rules for building with AI tools without giving up reproducibility. Based in Taiwan, open to relocation, EU Blue Card eligible.
+
+Open to interesting problems, research collaborations, and conversations about where mathematics-first AI can go next.
+
+<sub>The figure above is <code>scripts/build-figure.mjs</code>: 420 points, deterministic, animated with SMIL because a README can ship an image and nothing else. The live version, on WebGPU, is on <a href="https://ajishpradeep.com">the site</a>.</sub>
