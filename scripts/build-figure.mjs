@@ -1,8 +1,15 @@
 /*
- * Generates the animated banner for the profile README: a cloud of points
- * that resolves into a human pose — the same figure the front page of
- * ajishpradeep.com draws live with WebGPU, here as plain SVG with SMIL
- * animation, because a README can ship an image and nothing else.
+ * Generates the animated banner for the profile README: 420 points that find
+ * structure, lose it, and find a different one — pure SVG with SMIL, because
+ * a README can ship an image and nothing else.
+ *
+ * Three formations, none of them a product:
+ *   noise   — no structure yet
+ *   surface — a torus seen through two cameras, sight-lines to the points they
+ *             triangulate: multi-view geometry, the mathematics under every
+ *             reconstruction whatever the object is
+ *   matrix  — a masked self-attention matrix, density as weight: the
+ *             mathematics under every language model
  *
  * Deterministic: the same seed lays the same points every run.
  *
@@ -10,125 +17,151 @@
  */
 import { writeFileSync } from 'node:fs';
 
-/* ---------------------------------------------------------------- data */
-
-// Joints of a golfer at address (metres; y up; facing +z), from the site's scene.
-const J = {
-  head: [0.0, 1.56, 0.34], neck: [0.0, 1.43, 0.29],
-  lSho: [-0.21, 1.4, 0.27], rSho: [0.21, 1.4, 0.27],
-  lElb: [-0.23, 1.14, 0.42], rElb: [0.2, 1.12, 0.41],
-  lWri: [-0.04, 0.88, 0.52], rWri: [0.03, 0.86, 0.52],
-  thorax: [0.0, 1.27, 0.18], pelvis: [0.0, 0.96, 0.0],
-  lHip: [-0.15, 0.94, 0.0], rHip: [0.15, 0.94, 0.0],
-  lKne: [-0.17, 0.52, 0.07], rKne: [0.17, 0.52, 0.07],
-  lAnk: [-0.2, 0.08, 0.0], rAnk: [0.2, 0.08, 0.0],
-  lToe: [-0.22, 0.02, 0.2], rToe: [0.22, 0.02, 0.2],
-  grip: [0.0, 0.84, 0.54], shaft: [0.03, 0.44, 0.8], clubhead: [0.06, 0.03, 1.06], toe: [0.18, 0.03, 1.08],
-};
-const BONES = [
-  ['head', 'neck'], ['neck', 'lSho'], ['neck', 'rSho'], ['lSho', 'lElb'], ['rSho', 'rElb'],
-  ['lElb', 'lWri'], ['rElb', 'rWri'], ['neck', 'thorax'], ['thorax', 'pelvis'], ['pelvis', 'lHip'],
-  ['pelvis', 'rHip'], ['lHip', 'lKne'], ['rHip', 'rKne'], ['lKne', 'lAnk'], ['rKne', 'rAnk'],
-  ['lAnk', 'lToe'], ['rAnk', 'rToe'],
-];
-const CLUB = [['grip', 'shaft'], ['shaft', 'clubhead'], ['clubhead', 'toe']];
-const CAMERAS = [
-  { at: [0.0, 1.1, 1.45], look: [0.0, 0.95, 0.4] },
-  { at: [1.35, 1.1, 0.45], look: [0.0, 0.95, 0.4] },
-];
-const SIGHTLINES = ['head', 'lSho', 'rSho', 'lWri', 'pelvis', 'lKne', 'rAnk', 'clubhead'];
-
 /* ---------------------------------------------------------------- maths */
 
 let seed = 20250916;
 const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
 const gauss = () => Math.sqrt(-2 * Math.log(Math.max(rnd(), 1e-9))) * Math.cos(2 * Math.PI * rnd());
 
-// Three-quarter view: yaw 0.8 rad about y, then a light orthographic projection.
-const YAW = 0.8, TILT = 0.12;
-function project([x, y, z]) {
-  const x1 = x * Math.cos(YAW) + z * Math.sin(YAW);
-  const z1 = -x * Math.sin(YAW) + z * Math.cos(YAW);
-  const y1 = y * Math.cos(TILT) - z1 * Math.sin(TILT);
+const sub = (a, b) => a.map((v, i) => v - b[i]);
+const add = (a, b) => a.map((v, i) => v + b[i]);
+const mul = (a, k) => a.map((v) => v * k);
+const cross = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+const norm = (a) => { const l = Math.hypot(...a); return a.map((v) => v / l); };
+
+// Orthographic three-quarter view: yaw about y, then tilt about x.
+function project([x, y, z], yaw, tilt) {
+  const x1 = x * Math.cos(yaw) + z * Math.sin(yaw);
+  const z1 = -x * Math.sin(yaw) + z * Math.cos(yaw);
+  const y1 = y * Math.cos(tilt) - z1 * Math.sin(tilt);
   return [x1, y1];
 }
 
 /* ---------------------------------------------------------------- layout */
 
-const W = 1200, H = 420;
-const CX = 880, CY = 232, SCALE = 205; // where the golfer stands, px per metre
-const px = ([x, y]) => [CX + x * SCALE, CY - (y - 0.9) * SCALE];
+const W = 1200, H = 420, N = 420;
+const CX = 905, CY = 205, SCALE = 165; // figure centre and px per unit
+const px = ([x, y]) => [CX + x * SCALE, CY - y * SCALE];
 
-function samplePoints() {
-  const pts = [];
-  const bones = [...BONES.map((b) => [b, false]), ...CLUB.map((b) => [b, true])];
-  const len = ([a, b]) => Math.hypot(...J[a].map((v, i) => v - J[b][i]));
-  const weights = bones.map(([b, club]) => len(b) * (club ? 0.6 : 1));
-  const total = weights.reduce((s, w) => s + w, 0);
-  for (let i = 0; i < 420; i += 1) {
-    let pick = rnd() * total, bi = 0;
-    while (bi < bones.length - 1 && pick > weights[bi]) { pick -= weights[bi]; bi += 1; }
-    const [[a, b], club] = bones[bi];
-    const onJoint = rnd() < 0.16;
-    const t = onJoint ? (rnd() < 0.5 ? 0 : 1) : rnd();
-    const r = onJoint ? 0.022 : club ? 0.006 : 0.012;
-    const p = J[a].map((v, k) => v + (J[b][k] - v) * t + gauss() * r);
-    pts.push({ home: px(project(p)), club });
+/* --- surface: a torus, R=0.62 r=0.24, turning slowly while it is held. */
+const R = 0.74, r = 0.17;
+const torusPoints = Array.from({ length: N }, () => {
+  const u = rnd() * 2 * Math.PI, v = rnd() * 2 * Math.PI;
+  return [(R + r * Math.cos(v)) * Math.cos(u), r * Math.sin(v), (R + r * Math.cos(v)) * Math.sin(u)];
+});
+const TILT = 0.95;
+const torusA = torusPoints.map((p) => px(project(p, 0.3, TILT)));
+const torusB = torusPoints.map((p) => px(project(p, 1.5, TILT)));
+
+/* --- two cameras looking at the surface, from the same view as torusA. */
+const CAMERAS = [
+  { at: [0.0, 0.8, 1.35], look: [0, 0, 0] },
+  { at: [1.4, 0.8, 0.25], look: [0, 0, 0] },
+];
+const sightTargets = [3, 91, 205, 260, 388];
+
+/* --- matrix: 7×7 masked self-attention over one sentence; density is weight. */
+const T = 7;
+const attention = [];
+for (let row = 0; row < T; row += 1) {
+  const logits = [];
+  for (let col = 0; col < T; col += 1) {
+    if (col > row) { logits.push(-Infinity); continue; }
+    let l = rnd() * 1.2;
+    if (col === row) l += 1.1;
+    if (col === 0) l += 0.4;
+    if (row === 4 && col === 1) l += 1.8;
+    if (row === 6 && (col === 5 || col === 2)) l += 1.4;
+    logits.push(l);
   }
-  return pts;
+  const m = Math.max(...logits);
+  const e = logits.map((l) => (l === -Infinity ? 0 : Math.exp(l - m)));
+  const z = e.reduce((s, v) => s + v, 0);
+  attention.push(e.map((v) => v / z));
 }
+const cell = 0.2, half = ((T - 1) * cell) / 2, perRow = Math.floor(N / T);
+const gridPts = [];
+for (let row = 0; row < T; row += 1) {
+  let placed = 0;
+  for (let col = 0; col <= row; col += 1) {
+    const want = col === row ? perRow - placed : Math.round(attention[row][col] * perRow);
+    for (let q = 0; q < want; q += 1) {
+      gridPts.push(px([-half + col * cell + (rnd() - 0.5) * cell * 0.8, half - row * cell + (rnd() - 0.5) * cell * 0.8]));
+    }
+    placed += want;
+  }
+}
+while (gridPts.length < N) gridPts.push(px([half + (rnd() - 0.5) * cell * 0.8, -half + (rnd() - 0.5) * cell * 0.8]));
 
 /* ---------------------------------------------------------------- svg */
 
+const DUR = 18;
+// noise → surface (turning) → matrix (held) → noise
+const KEYTIMES = '0;0.16;0.42;0.54;0.78;1';
+const SPLINES = '0.2 0 0.2 1;0 0 1 1;0.2 0 0.2 1;0 0 1 1;0.2 0 0.2 1';
+const EASE = `calcMode="spline" keyTimes="${KEYTIMES}" keySplines="${SPLINES}"`;
+
 function figure({ ink, dust, accent, line }) {
-  const pts = samplePoints();
-  const DUR = 11;
-  const circles = pts.map(({ home: [hx, hy], club }) => {
-    // Where this point drifts when the structure dissolves: a soft cloud around the figure.
-    const nx = CX + 20 + gauss() * 150, ny = CY + gauss() * 105;
-    const d = -(rnd() * 2.2).toFixed(2); // stagger
-    const ease = 'calcMode="spline" keyTimes="0;0.32;0.68;1" keySplines="0.2 0 0.2 1;0 0 1 1;0.2 0 0.2 1"';
-    return `<circle r="${club ? 1.7 : 1.5}" fill="${club ? accent : ink}" fill-opacity="0.9">` +
-      `<animate attributeName="cx" values="${nx.toFixed(1)};${hx.toFixed(1)};${hx.toFixed(1)};${nx.toFixed(1)}" dur="${DUR}s" begin="${d}s" repeatCount="indefinite" ${ease}/>` +
-      `<animate attributeName="cy" values="${ny.toFixed(1)};${hy.toFixed(1)};${hy.toFixed(1)};${ny.toFixed(1)}" dur="${DUR}s" begin="${d}s" repeatCount="indefinite" ${ease}/>` +
+  seed = 424242;
+  const f = (v) => v.toFixed(1);
+  const circles = Array.from({ length: N }, (_, i) => {
+    const nx = CX + 10 + gauss() * 150, ny = CY + 10 + gauss() * 105;
+    const [ax, ay] = torusA[i], [bx, by] = torusB[i], [gx, gy] = gridPts[i];
+    const d = -(rnd() * 1.6).toFixed(2);
+    const lit = sightTargets.includes(i);
+    return `<circle r="${lit ? 2.1 : 1.5}" fill="${lit ? accent : ink}" fill-opacity="0.9">` +
+      `<animate attributeName="cx" values="${f(nx)};${f(ax)};${f(bx)};${f(gx)};${f(gx)};${f(nx)}" dur="${DUR}s" begin="${d}s" repeatCount="indefinite" ${EASE}/>` +
+      `<animate attributeName="cy" values="${f(ny)};${f(ay)};${f(by)};${f(gy)};${f(gy)};${f(ny)}" dur="${DUR}s" begin="${d}s" repeatCount="indefinite" ${EASE}/>` +
       `</circle>`;
   }).join('\n    ');
 
-  // Ambient dust that never joins the body.
+  // Ambient dust that never joins the structure.
   const dustDots = Array.from({ length: 140 }, () => {
     const x = CX + 30 + gauss() * 260, y = CY + gauss() * 170;
     const x2 = x + gauss() * 14, y2 = y + gauss() * 14;
-    return `<circle r="1.1" fill="${dust}" fill-opacity="0.55"><animate attributeName="cx" values="${x.toFixed(1)};${x2.toFixed(1)};${x.toFixed(1)}" dur="${(7 + rnd() * 6).toFixed(1)}s" repeatCount="indefinite"/><animate attributeName="cy" values="${y.toFixed(1)};${y2.toFixed(1)};${y.toFixed(1)}" dur="${(7 + rnd() * 6).toFixed(1)}s" repeatCount="indefinite"/></circle>`;
+    return `<circle r="1.1" fill="${dust}" fill-opacity="0.55"><animate attributeName="cx" values="${f(x)};${f(x2)};${f(x)}" dur="${(7 + rnd() * 6).toFixed(1)}s" repeatCount="indefinite"/><animate attributeName="cy" values="${f(y)};${f(y2)};${f(y)}" dur="${(7 + rnd() * 6).toFixed(1)}s" repeatCount="indefinite"/></circle>`;
   }).join('\n    ');
 
-  // Camera frustums and sight-lines, visible only while the body is assembled.
+  // Camera frustums and sight-lines, visible only while the surface is assembled.
   const segs = [];
   for (const cam of CAMERAS) {
     const at = cam.at, fwd = norm(sub(cam.look, at));
     const right = norm(cross(fwd, [0, 1, 0])), up = norm(cross(right, fwd));
-    const c = add(at, mul(fwd, 0.22));
-    const corners = [[1, 1], [-1, 1], [-1, -1], [1, -1]].map(([sx, sy]) => add(add(c, mul(right, 0.13 * sx)), mul(up, 0.08 * sy)));
+    const c = add(at, mul(fwd, 0.24));
+    const corners = [[1, 1], [-1, 1], [-1, -1], [1, -1]].map(([sx, sy]) => add(add(c, mul(right, 0.14 * sx)), mul(up, 0.09 * sy)));
     for (let i = 0; i < 4; i += 1) { segs.push([at, corners[i]]); segs.push([corners[i], corners[(i + 1) % 4]]); }
-    for (const j of SIGHTLINES) segs.push([at, J[j]]);
+    for (const t of sightTargets) segs.push([at, torusPoints[t]]);
   }
   const lines = segs.map(([a, b]) => {
-    const [x1, y1] = px(project(a)), [x2, y2] = px(project(b));
-    return `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}"/>`;
+    const [x1, y1] = px(project(a, 0.3, TILT)), [x2, y2] = px(project(b, 0.3, TILT));
+    return `<line x1="${f(x1)}" y1="${f(y1)}" x2="${f(x2)}" y2="${f(y2)}"/>`;
   }).join('\n      ');
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="AI works because mathematics does. A cloud of points resolves into a human pose, triangulated by two cameras, then dissolves again.">
+  // Axis labels for the matrix, visible only while it is held.
+  const labels = Array.from({ length: T }, (_, i) => {
+    const [x] = px([-half + i * cell, 0]), [, y] = px([0, half - i * cell]);
+    const [, top] = px([0, half + cell * 0.9]), [left] = px([-half - cell * 0.9, 0]);
+    return `<text x="${f(x)}" y="${f(top)}" text-anchor="middle">k${i + 1}</text><text x="${f(left)}" y="${f(y + 4)}" text-anchor="end">q${i + 1}</text>`;
+  }).join('');
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="AI works because mathematics does. A cloud of points resolves into a surface seen by two cameras, then into a masked attention matrix, then dissolves again.">
   <style>
     .t { font-family: "Source Serif 4", "Iowan Old Style", Charter, Georgia, "Times New Roman", serif; fill: ${ink}; }
     .c { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: ${dust}; }
+    .m { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 9px; fill: ${dust}; }
   </style>
   <text class="t" x="48" y="140" font-size="58" font-weight="500" letter-spacing="-1.2">AI works because</text>
   <text class="t" x="48" y="206" font-size="58" font-weight="500" letter-spacing="-1.2">mathematics does.</text>
   <text class="c" x="48" y="262" font-size="17">Pradeep Rajasekar, also Ajish Pradeep. AI Research Engineer, Taipei.</text>
-  <text class="c" x="48" y="288" font-size="17">Human pose in 3D, on a phone. Retail vision at 7,000 stores. LLMs that never do the maths.</text>
-  <text class="c" x="48" y="384" font-size="13"><tspan font-weight="600" fill="${ink}">Fig. 1</tspan>  420 points finding a body: two consumer cameras, 29 keypoints, and the club the product needed. Drawn live at ajishpradeep.com.</text>
+  <text class="c" x="48" y="288" font-size="17">3D vision and geometry. On-device inference. LLM systems that never do the maths.</text>
+  <text class="c" x="48" y="384" font-size="13"><tspan font-weight="600" fill="${ink}">Fig. 1</tspan>  420 points, three structures: noise, a surface seen by two cameras, a masked attention matrix.</text>
   <g stroke="${line}" stroke-width="0.7" fill="none">
-    <animate attributeName="opacity" values="0;0;0.65;0.65;0;0" keyTimes="0;0.3;0.4;0.62;0.72;1" dur="${DUR}s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.7;0.7;0;0" keyTimes="0;0.14;0.2;0.3;0.38;1" dur="${DUR}s" repeatCount="indefinite"/>
       ${lines}
+  </g>
+  <g class="m">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.52;0.58;0.76;0.82;1" dur="${DUR}s" repeatCount="indefinite"/>
+    ${labels}
   </g>
   <g>
     ${dustDots}
@@ -140,13 +173,6 @@ function figure({ ink, dust, accent, line }) {
 `;
 }
 
-const sub = (a, b) => a.map((v, i) => v - b[i]);
-const add = (a, b) => a.map((v, i) => v + b[i]);
-const mul = (a, k) => a.map((v) => v * k);
-const cross = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
-const norm = (a) => { const l = Math.hypot(...a); return a.map((v) => v / l); };
-
 writeFileSync('figure-light.svg', figure({ ink: '#15181e', dust: '#7b8089', accent: '#1f45e0', line: '#9aa0a8' }));
-seed = 20250916;
 writeFileSync('figure-dark.svg', figure({ ink: '#e8e9e4', dust: '#8b9098', accent: '#7c96ff', line: '#5b6068' }));
 console.log('wrote figure-light.svg, figure-dark.svg');

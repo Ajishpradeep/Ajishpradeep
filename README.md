@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Ajishpradeep/Ajishpradeep/main/figure-dark.svg">
-  <img alt="AI works because mathematics does. A cloud of points resolves into a human pose, triangulated by two cameras, then dissolves again." src="https://raw.githubusercontent.com/Ajishpradeep/Ajishpradeep/main/figure-light.svg" width="100%">
+  <img alt="AI works because mathematics does. A cloud of points resolves into a surface seen by two cameras, then into a masked attention matrix, then dissolves again." src="https://raw.githubusercontent.com/Ajishpradeep/Ajishpradeep/main/figure-light.svg" width="100%">
 </picture>
 
 I engineer AI where the mathematics is explicit and the physics is enforced. It may be an LLM, a vision or multimodal system, generative or predictive — the domain changes, the mathematics does not.
@@ -62,4 +62,4 @@ AI Research Engineer at IdeasLab Formosa, New Taipei City. Working on the pose-l
 
 Open to interesting problems, research collaborations, and conversations about where mathematics-first AI can go next.
 
-<sub>The figure above is <code>scripts/build-figure.mjs</code>: 420 points, deterministic, animated with SMIL because a README can ship an image and nothing else. The live version, on WebGPU, is on <a href="https://ajishpradeep.com">the site</a>.</sub>
+<sub>The figure above is <code>scripts/build-figure.mjs</code>: 420 points finding three structures — noise, a surface seen by two cameras, a masked attention matrix — deterministic, animated with SMIL because a README can ship an image and nothing else. The live version, on WebGPU, is on <a href="https://ajishpradeep.com">the site</a>.</sub>
