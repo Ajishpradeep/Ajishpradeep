@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Ajishpradeep/Ajishpradeep/main/figure-dark.svg">
-  <img alt="AI works because mathematics does. A cloud of points resolves into a golfer at address, triangulated by two cameras, then dissolves again." src="https://raw.githubusercontent.com/Ajishpradeep/Ajishpradeep/main/figure-light.svg" width="100%">
+  <img alt="AI works because mathematics does. A cloud of points resolves into a human pose, triangulated by two cameras, then dissolves again." src="https://raw.githubusercontent.com/Ajishpradeep/Ajishpradeep/main/figure-light.svg" width="100%">
 </picture>
 
 I engineer AI where the mathematics is explicit and the physics is enforced. It may be an LLM, a vision or multimodal system, generative or predictive — the domain changes, the mathematics does not.
@@ -14,7 +14,7 @@ I engineer AI where the mathematics is explicit and the physics is enforced. It 
 ## Three bodies of work
 
 **Motion — markerless 3D biomechanics on a phone.** IdeasLab Formosa, 2025 – present.
-Two consumer cameras, a 29-keypoint pose model, multi-view reconstruction anchored to real scale, and a coaching layer in which the language model is never allowed to do the maths. Mean per-joint 3D error 8 cm → 3 cm; the full pipeline on Apple silicon via Core ML with no footage leaving the handset, in an app used by PGA Tour professionals.
+Two consumer cameras, a 29-keypoint pose model, multi-view reconstruction anchored to real scale, and a coaching layer in which the language model is never allowed to do the maths. Mean per-joint 3D error 8 cm → 3 cm; the full pipeline on Apple silicon via Core ML with no footage leaving the handset — shipped in a golf product used by PGA Tour professionals, though the domain is the body, not the sport.
 Case files: [the pose model and the fine-tune that quietly corrupted it](https://ajishpradeep.com/work/markerless-3d-motion/) · [the geometry underneath everything](https://ajishpradeep.com/work/reconstruction-infrastructure/) · [an LLM that is never allowed to do the maths](https://ajishpradeep.com/work/agentic-coaching-llm/)
 
 **Retail — open-set recognition at 7,000+ stores.** President Information Corp, 2023 – 2025.

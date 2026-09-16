@@ -1,6 +1,6 @@
 /*
  * Generates the animated banner for the profile README: a cloud of points
- * that resolves into a golfer at address — the same figure the front page of
+ * that resolves into a human pose — the same figure the front page of
  * ajishpradeep.com draws live with WebGPU, here as plain SVG with SMIL
  * animation, because a README can ship an image and nothing else.
  *
@@ -116,7 +116,7 @@ function figure({ ink, dust, accent, line }) {
     return `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}"/>`;
   }).join('\n      ');
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="AI works because mathematics does. A cloud of points resolves into a golfer at address, triangulated by two cameras, then dissolves again.">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="AI works because mathematics does. A cloud of points resolves into a human pose, triangulated by two cameras, then dissolves again.">
   <style>
     .t { font-family: "Source Serif 4", "Iowan Old Style", Charter, Georgia, "Times New Roman", serif; fill: ${ink}; }
     .c { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: ${dust}; }
@@ -124,8 +124,8 @@ function figure({ ink, dust, accent, line }) {
   <text class="t" x="48" y="140" font-size="58" font-weight="500" letter-spacing="-1.2">AI works because</text>
   <text class="t" x="48" y="206" font-size="58" font-weight="500" letter-spacing="-1.2">mathematics does.</text>
   <text class="c" x="48" y="262" font-size="17">Pradeep Rajasekar, also Ajish Pradeep. AI Research Engineer, Taipei.</text>
-  <text class="c" x="48" y="288" font-size="17">3D vision on the phone. Retail vision at 7,000 stores. LLMs that never do the maths.</text>
-  <text class="c" x="48" y="384" font-size="13"><tspan font-weight="600" fill="${ink}">Fig. 1</tspan>  420 points finding a golfer: two consumer cameras, one body, one club. Drawn live at ajishpradeep.com.</text>
+  <text class="c" x="48" y="288" font-size="17">Human pose in 3D, on a phone. Retail vision at 7,000 stores. LLMs that never do the maths.</text>
+  <text class="c" x="48" y="384" font-size="13"><tspan font-weight="600" fill="${ink}">Fig. 1</tspan>  420 points finding a body: two consumer cameras, 29 keypoints, and the club the product needed. Drawn live at ajishpradeep.com.</text>
   <g stroke="${line}" stroke-width="0.7" fill="none">
     <animate attributeName="opacity" values="0;0;0.65;0.65;0;0" keyTimes="0;0.3;0.4;0.62;0.72;1" dur="${DUR}s" repeatCount="indefinite"/>
       ${lines}
