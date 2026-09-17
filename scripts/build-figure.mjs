@@ -154,7 +154,6 @@ function figure({ ink, dust, accent, line }) {
   <text class="t" x="48" y="206" font-size="58" font-weight="500" letter-spacing="-1.2">mathematics does.</text>
   <text class="c" x="48" y="262" font-size="17">Pradeep Rajasekar, also Ajish Pradeep. AI Research Engineer, Taipei.</text>
   <text class="c" x="48" y="288" font-size="17">3D vision and geometry. On-device inference. LLM systems that never do the maths.</text>
-  <text class="c" x="48" y="384" font-size="13"><tspan font-weight="600" fill="${ink}">Fig. 1</tspan>  420 points, three structures: noise, a surface seen by two cameras, a masked attention matrix.</text>
   <g stroke="${line}" stroke-width="0.7" fill="none">
     <animate attributeName="opacity" values="0;0;0.7;0.7;0;0" keyTimes="0;0.14;0.2;0.3;0.38;1" dur="${DUR}s" repeatCount="indefinite"/>
       ${lines}

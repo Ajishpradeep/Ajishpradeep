@@ -7,7 +7,7 @@ I engineer AI where the mathematics is explicit and the physics is enforced. It 
 
 *A metric that cannot see a fault will certify it. Those are the failures I build against.*
 
-**[ajishpradeep.com](https://ajishpradeep.com)** — the work, with its figures drawn live &nbsp;·&nbsp; **[CV](https://ajishpradeep.com/cv/)** &nbsp;·&nbsp; [LinkedIn](https://linkedin.com/in/ajishpradeep) &nbsp;·&nbsp; [ajishpradeep@gmail.com](mailto:ajishpradeep@gmail.com)
+**[ajishpradeep.com](https://ajishpradeep.com)** — the work in full &nbsp;·&nbsp; **[CV](https://ajishpradeep.com/cv/)** &nbsp;·&nbsp; [LinkedIn](https://linkedin.com/in/ajishpradeep) &nbsp;·&nbsp; [ajishpradeep@gmail.com](mailto:ajishpradeep@gmail.com)
 
 <br>
 
@@ -63,5 +63,3 @@ Independent builds, most recent first. The habit they share: the model proposes,
 AI Research Engineer at IdeasLab Formosa, New Taipei City. Working on the pose-lifting stack, the coaching LLM, and the engineering team's rules for building with AI tools without giving up reproducibility. Based in Taiwan, open to relocation, EU Blue Card eligible.
 
 Open to interesting problems, research collaborations, and conversations about where mathematics-first AI can go next.
-
-<sub>The figure above is <code>scripts/build-figure.mjs</code>: 420 points finding three structures — noise, a surface seen by two cameras, a masked attention matrix — deterministic, animated with SMIL because a README can ship an image and nothing else. The live version, on WebGPU, is on <a href="https://ajishpradeep.com">the site</a>.</sub>
